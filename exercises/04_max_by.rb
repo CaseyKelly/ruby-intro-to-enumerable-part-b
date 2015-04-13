@@ -1,4 +1,22 @@
 def max_by(items, &block)
+  results = []
+  long_item = ''
+  items.each do |item|
+    if item.class == Fixnum
+      if item > long_item.to_i
+        long_item = item
+      end
+    else
+      if item.length > long_item.length
+        long_item = item
+      end
+    end
+  end
+  if long_item == ''
+    long_item = nil
+  else
+    long_item
+  end
 end
 
 # ------ code above this line ------
