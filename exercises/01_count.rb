@@ -1,4 +1,11 @@
 def count(words, &block)
+  results = []
+  words.each do |word|
+    if block.call(word)
+      results << word
+    end
+  end
+  results.count
 end
 
 # ------ code above this line ------
